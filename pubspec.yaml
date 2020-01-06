@@ -51,6 +51,11 @@ flutter:
    - assets/product_01.jpg
    - assets/product_02.jpg
    - assets/product_03.jpg
+   - assets/product_04.jpg
+   - assets/product_05.jpg
+   - assets/product_06.jpeg
+   - assets/product_07.jpg
+   - assets/product_08.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -75,5 +80,21 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: CustomIcons
+      fonts:
+        - asset: assets/CustomIcons.ttf
+
+    - family: Montserrat-Bold
+      fonts:
+        - asset: assets/Montserrat-Bold.ttf
+
+    - family: Montserrat-Black
+      fonts:
+        - asset: assets/Montserrat-Black.ttf
+
+    - family: Montserrat-Medium
+      fonts:
+        - asset: assets/Montserrat-Medium.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -3,8 +3,8 @@ import 'package:flutter_ui_furniture/ProductDetail.dart';
 import 'package:flutter_ui_furniture/data.dart';
 
 void main() => runApp(MaterialApp(
-      // home: MyApp(),
-      home: ProductDetail(),
+      home: MyApp(),
+      // home: ProductDetail(),
       debugShowCheckedModeBanner: false,
     ));
 
@@ -100,85 +100,92 @@ class _MyAppState extends State<MyApp> {
                     physics: BouncingScrollPhysics(),
                     itemCount: images.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Padding(
-                        padding: EdgeInsets.only(left: 35.0, bottom: 60.0),
-                        child: SizedBox(
-                          width: 200.0,
-                          child: Stack(
-                            fit: StackFit.expand,
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.only(top: 45.0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: (index % 2 == 0)
-                                        ? Colors.white
-                                        : Color(0xff2a2d3f),
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Colors.black12,
-                                          offset: Offset(0.0, 10.0),
-                                          blurRadius: 10.0),
-                                    ],
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  Image.asset(
-                                    images[index],
-                                    width: 172.5,
-                                    height: 199.0,
-                                  ),
-                                  SizedBox(
-                                    height: 12.0,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.all(12.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        Text(
-                                          title[index],
-                                          style: TextStyle(
-                                              fontSize: 16.0,
-                                              color: (index % 2 == 0)
-                                                  ? Color(0xff2a2d4f)
-                                                  : Colors.white),
-                                        ),
-                                        SizedBox(
-                                          height: 8.0,
-                                        ),
-                                        Text(
-                                          "New Sell",
-                                          style: TextStyle(
-                                              fontSize: 12.0,
-                                              color: (index % 2 == 0)
-                                                  ? Color(0xff2a2d4f)
-                                                  : Colors.white),
-                                        ),
-                                        SizedBox(
-                                          height: 1.0,
-                                        ),
-                                        Text(
-                                          price[index] + "\$",
-                                          style: TextStyle(
-                                              fontSize: 30.0,
-                                              color: (index % 2 == 0)
-                                                  ? Color(0xff2a2d4f)
-                                                  : Colors.white),
-                                        )
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+                            return ProductDetail();
+                          }));
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 35.0, bottom: 60.0),
+                          child: SizedBox(
+                            width: 200.0,
+                            child: Stack(
+                              fit: StackFit.expand,
+                              children: <Widget>[
+                                Padding(
+                                  padding: EdgeInsets.only(top: 45.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: (index % 2 == 0)
+                                          ? Colors.white
+                                          : Color(0xff2a2d3f),
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Colors.black12,
+                                            offset: Offset(0.0, 10.0),
+                                            blurRadius: 10.0),
                                       ],
+                                      borderRadius: BorderRadius.circular(12.0),
                                     ),
                                   ),
-                                ],
-                              ),
-                            ],
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: <Widget>[
+                                    Image.asset(
+                                      images[index],
+                                      width: 172.5,
+                                      height: 199.0,
+                                    ),
+                                    SizedBox(
+                                      height: 12.0,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(12.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Text(
+                                            title[index],
+                                            style: TextStyle(
+                                                fontSize: 16.0,
+                                                color: (index % 2 == 0)
+                                                    ? Color(0xff2a2d4f)
+                                                    : Colors.white),
+                                          ),
+                                          SizedBox(
+                                            height: 8.0,
+                                          ),
+                                          Text(
+                                            "New Sell",
+                                            style: TextStyle(
+                                                fontSize: 12.0,
+                                                color: (index % 2 == 0)
+                                                    ? Color(0xff2a2d4f)
+                                                    : Colors.white),
+                                          ),
+                                          SizedBox(
+                                            height: 1.0,
+                                          ),
+                                          Text(
+                                            price[index] + "\$",
+                                            style: TextStyle(
+                                                fontSize: 30.0,
+                                                color: (index % 2 == 0)
+                                                    ? Color(0xff2a2d4f)
+                                                    : Colors.white),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
+                        )
                       );
                     },
                   ),
