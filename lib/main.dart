@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_furniture/ProductDetail.dart';
 import 'package:flutter_ui_furniture/data.dart';
 
 void main() => runApp(MaterialApp(
-      home: MyApp(),
+      // home: MyApp(),
+      home: ProductDetail(),
       debugShowCheckedModeBanner: false,
     ));
 
